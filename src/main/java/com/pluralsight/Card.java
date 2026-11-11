@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class Card {
-    private String suit;
+    private final String suit;
     private String value;
     private boolean isFaceUp;
 
@@ -36,7 +36,7 @@ public class Card {
             switch (value) {
                 case "a" -> value = "11";
                 case "k", "q", "j" -> value = "10";
-                default -> System.out.println("Invalid card value");
+                default -> value = value;
             }
             return parseValue(value);
         } else {
