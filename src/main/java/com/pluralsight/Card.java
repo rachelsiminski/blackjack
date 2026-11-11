@@ -12,11 +12,19 @@ public class Card {
     }
 
     public String getSuit() {
-        return suit;
+        if (isFaceUp) {
+            return suit;
+        } else {
+            return null;
+        }
     }
 
     public String getValue() {
-        return value;
+        if (isFaceUp) {
+            return value;
+        } else {
+            return null;
+        }
     }
 
     public boolean isFaceUp() {
@@ -24,10 +32,20 @@ public class Card {
     }
 
     public int getPointValue(String value) {
-        try {
-            return Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            System.out.println("Unable to parse point value");
+        if (isFaceUp) {
+            if (value.equalsIgnoreCase("a")) {
+                value = "11";
+            } else if (value.equalsIgnoreCase("k") || value.equalsIgnoreCase("q") || value.equalsIgnoreCase("j")) {
+                value = "10";
+            }
+
+            try {
+                return Integer.parseInt(value);
+            } catch (NumberFormatException e) {
+                System.out.println("Unable to parse point value");
+                return 0;
+            }
+        } else {
             return 0;
         }
     }
