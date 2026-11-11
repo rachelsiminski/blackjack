@@ -31,7 +31,7 @@ public class Card {
         return isFaceUp;
     }
 
-    public int getPointValue(String value) {
+    public int getPointValue() {
         if (isFaceUp) {
             switch (value) {
                 case "a" -> value = "11";
