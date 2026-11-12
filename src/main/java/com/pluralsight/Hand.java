@@ -3,10 +3,12 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Hand {
-    private final ArrayList<Card> cards;
+    private ArrayList<Card> cards;
+    private String name;
 
-    public Hand() {
+    public Hand(String name) {
         cards = new ArrayList<>();
+        this.name = name;
     }
 
     public int getSize() {

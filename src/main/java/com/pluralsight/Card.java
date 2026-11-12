@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class Card {
-    private final String suit;
+    private String suit;
     private String value;
     private boolean isFaceUp;
 
@@ -15,7 +15,7 @@ public class Card {
         if (isFaceUp) {
             return suit;
         } else {
-            return null;
+            return "#";
         }
     }
 
@@ -23,7 +23,7 @@ public class Card {
         if (isFaceUp) {
             return value;
         } else {
-            return null;
+            return "#";
         }
     }
 
