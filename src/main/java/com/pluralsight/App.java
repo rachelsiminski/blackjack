@@ -21,12 +21,15 @@ public class App {
             System.out.println("Enter name of player: ");
             String name = scanner.nextLine();
             players.add(name);
-            Hand hand = new Hand(name);
+            Hand hand = new Hand(name, i);
             hand.deal(deck.deal());
             hand.deal(deck.deal());
             System.out.println(hand.getName() + " " + hand.getSize());
         }
 
+
+
+        }
 
     }
 }
