@@ -11,6 +11,10 @@ public class Hand {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getSize() {
         return cards.size();
     }

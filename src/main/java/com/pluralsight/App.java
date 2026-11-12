@@ -19,11 +19,14 @@ public class App {
 
         for (int i = 0; i < numberOfPlayers; i++) {
             System.out.println("Enter name of player: ");
-            players.add(scanner.nextLine());
-
+            String name = scanner.nextLine();
+            players.add(name);
+            Hand hand = new Hand(name);
+            hand.deal(deck.deal());
+            hand.deal(deck.deal());
+            System.out.println(hand.getName() + " " + hand.getSize());
         }
 
-        System.out.println(players.size());
 
     }
 }
