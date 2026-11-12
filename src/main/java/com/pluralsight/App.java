@@ -15,13 +15,13 @@ public class App {
         System.out.println("Enter the number of players: ");
         int numberOfPlayers = Integer.parseInt(scanner.nextLine());
 
-        ArrayList<String> players = new ArrayList<>();
+        Game game = new Game();
 
         for (int i = 0; i < numberOfPlayers; i++) {
             System.out.println("Enter name of player: ");
             String name = scanner.nextLine();
-            players.add(name);
             Player player = new Player(name, i);
+            game.addPlayer(player);
             player.getHand().deal(deck.deal());
             player.getHand().deal(deck.deal());
 
@@ -31,6 +31,6 @@ public class App {
     }
 
     private static void displayHand(Player player) {
-        System.out.printf("Player name: %s%nHand Size: %d%nScore: %d%nWinner: %b", player.getName(), player.getHand().getSize(), player.getScore(), player.getIsWinner());
+        System.out.printf("Player name: %s%nHand Size: %d%nScore: %d%nWinner: %b%n", player.getName(), player.getHand().getSize(), player.getScore(), player.getIsWinner());
     }
 }
