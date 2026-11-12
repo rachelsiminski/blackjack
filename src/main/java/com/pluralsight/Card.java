@@ -33,22 +33,12 @@ public class Card {
 
     public int getPointValue() {
         if (isFaceUp) {
-            switch (value) {
-                case "A" -> value = "11";
-                case "K", "Q", "J" -> value = "10";
-                default -> value = value;
-            }
-            return parseValue(value);
+            return switch (value) {
+                case "A" -> 11;
+                case "K", "Q", "J" -> 10;
+                default -> Integer.parseInt(value);
+            };
         } else {
-            return 0;
-        }
-    }
-
-    private static int parseValue(String value) {
-        try {
-            return Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            System.out.println("Unable to parse point value");
             return 0;
         }
     }

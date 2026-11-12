@@ -23,8 +23,10 @@ public class Game {
         return dealerWin;
     }
 
-    public void setWinState() {
-        if (dealer.getScore() == 21) {
+    public void setWinState(int dealerScore, int playerScore) {
+        if (dealer.getScore() == player2.getScore()) {
+            dealerWin = true;
+        } else if (dealer.getScore() == 21) {
             dealerWin = true;
         } else if (player2.getScore() == 21) {
             dealerWin = false;
@@ -32,7 +34,9 @@ public class Game {
             dealerWin = true;
         } else if (player2.getScore() > dealer.getScore() && player2.getScore() < 21) {
             dealerWin = false;
-        } else if (dealer.getScore() == player2.getScore()) {
+        } else if (dealer.getScore() > 21 && player2.getScore() < 21) {
+            dealerWin = false;
+        } else if (dealer.getScore() < 21 && player2.getScore() > 21) {
             dealerWin = true;
         }
     }

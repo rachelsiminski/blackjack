@@ -23,7 +23,7 @@ public class Player {
         return this.isWinner;
     }
 
-    public void isWinner() {
-        //TODO: How do I make this calculate the winner?
+    public void isWinner(boolean winState) {
+        this.isWinner = winState;
     }
 }
