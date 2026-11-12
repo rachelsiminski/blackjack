@@ -34,8 +34,8 @@ public class Card {
     public int getPointValue() {
         if (isFaceUp) {
             switch (value) {
-                case "a" -> value = "11";
-                case "k", "q", "j" -> value = "10";
+                case "A" -> value = "11";
+                case "K", "Q", "J" -> value = "10";
                 default -> value = value;
             }
             return parseValue(value);
