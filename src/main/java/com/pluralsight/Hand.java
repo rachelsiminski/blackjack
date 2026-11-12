@@ -4,21 +4,9 @@ import java.util.ArrayList;
 
 public class Hand {
     private ArrayList<Card> cards;
-    private String name;
-    private int playerNumber;
 
-    public Hand(String name, int number) {
+    public Hand() {
         cards = new ArrayList<>();
-        this.name = name;
-        playerNumber = number;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getPlayerNumber() {
-        return playerNumber;
     }
 
     public int getSize() {
